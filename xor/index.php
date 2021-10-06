@@ -1,5 +1,11 @@
 <?php
 
+
+/**
+ * @param string
+ * @param string
+ * @return string
+ */
 function XORF(string $string, string $key) : string
 {
     for ($i = 0; $i < strlen($string); $i++)

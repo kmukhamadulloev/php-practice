@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * @param int
+ * @return array
+ */
 function Square(int $side) : array
 {
     $diagonal = sqrt(2) * $side;

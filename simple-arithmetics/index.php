@@ -1,6 +1,7 @@
 <?php
 
 /**
+ * This function calculated two variables using the type of calculation
  * @param int
  * @param int
  * @param string

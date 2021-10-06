@@ -1,6 +1,10 @@
 <?php
 
-function GetDominantColor($image) : array
+/**
+ * @param string
+ * @return array
+ */
+function GetDominantColor(string $image) : array
 {
     $image = imagecreatefromjpeg($image);
 
