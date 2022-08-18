@@ -12,6 +12,10 @@ function GetDominantColor(string $image) : array
     $image_height = imagesy($image);
     $total = $image_width * $image_height;
 
+    $r_total = 0;
+    $g_total = 0;
+    $b_total = 0;
+
     for ($x = 0; $x <= $image_width; $x++) {
         for ($y = 0; $y <= $image_height; $y++) {
             $rgb = imagecolorat($image, $x, $y);
