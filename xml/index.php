@@ -4,6 +4,10 @@ require_once './config.php';
 require_once './Database.php';
 require_once './core.php';
 
+if ($argc === 0) {
+    die("USE CONSOLE FOR THIS SCRIPT");
+}
+
 $file = $argv[1] ?? './data.xml';
 
 if (!file_exists($file)) {
