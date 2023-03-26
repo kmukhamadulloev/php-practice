@@ -102,16 +102,13 @@ function help(): void
 function down($link): array
 {
     $dom = new DOMDocument();
-    $webdata = cget($link);
+    $webdata = cget($link) ?: die("Couldnt download webpage, check internet connection!\n");
     libxml_use_internal_errors(true);
     $dom->loadHTML($webdata);
     $pathx = new DOMXPath($dom);
 
     $title = querySelector($pathx, '//*[@id="product"]/article/h2');
     $id = hash('CRC32', $title);
-    echo querySelectorValue($pathx, '//*[@id="breadcrumbs"]/a[2]') . ' - ' . querySelectorValue($pathx, '//*[@id="breadcrumbs"]/a[3]') . "\n";
-    echo hash("CRC32", trim(querySelectorValue($pathx, '//*[@id="breadcrumbs"]/a[2]')) . ' - ' . trim(querySelectorValue($pathx, '//*[@id="breadcrumbs"]/a[3]'))) . "\n";
-    die();
     $category = hash("CRC32", querySelectorValue($pathx, '//*[@id="breadcrumbs"]/a[2]') . ' - ' . querySelectorValue($pathx, '//*[@id="breadcrumbs"]/a[3]'));
     $price = querySelectorValue($pathx, '//*[@id="price"]/div[1]');
     $description = querySelector($pathx, '//div[@id="excerpt"]');
