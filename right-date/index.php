@@ -17,4 +17,4 @@ function DoesDateExist(int $day, int $month, int $year) : bool
         return false;
 }
 
-echo DoesDateExist(29, 2, 2013) ? "Дата есть в календаре" : "Такой даты нет";
+echo (DoesDateExist(29, 2, 2012) ? "Дата есть в календаре" : "Такой даты нет") . "\n";
